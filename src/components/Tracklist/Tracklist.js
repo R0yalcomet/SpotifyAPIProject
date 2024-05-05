@@ -8,7 +8,7 @@ const Tracklist = () => {
     return (
         <div className={styles.Tracklist}>
             {MockTracks.map(track => 
-                <Track name={track.name} artist={track.artists[0].name} album={track.album}/>
+                <Track name={track.name} artist={track.artists[0].name} album={track.album} isRemoval={true}/>
             )}
         </div>
     );
