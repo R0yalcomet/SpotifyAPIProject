@@ -9,7 +9,16 @@ import MockTracks from "./MockTracks";
 function App() {
   const [searchData, setSearchData] = useState(MockTracks);
   const [playlistName, setPlaylistName] = useState("New Playlist");
-  const [playlistTracks, setPlaylistTracks] = useState(MockTracks);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  const addTrack = (newTrack) => {
+    let inPlaylist = playlistTracks.some(track => track.id === newTrack.id);
+    const newPlaylist = playlistTracks.concat(newTrack)
+
+    if (!inPlaylist) {
+      setPlaylistTracks(newPlaylist);
+    } 
+  };
 
   return (
     <div>
@@ -17,7 +26,7 @@ function App() {
       <div className={styles.App}>
         <SearchBar/>
         <div className={styles["App-playlist"]}>
-          <SearchResults userSearch={searchData}/>
+          <SearchResults userSearch={searchData} onAdd={addTrack}/>
           <Playlist name={playlistName} playlistTracks={playlistTracks}/>
         </div>
       </div>

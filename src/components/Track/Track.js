@@ -2,14 +2,17 @@ import React from 'react';
 import styles from './Track.module.css';
 
 const Track = (props) => {
+    const moveTrack = () => {
+        props.buttonAction(props.track)
+    };
 
     return (
         <div className={styles.Track}>
             <div className={styles["Track-information"]}>
-                <h3>{props.name}</h3>
-                <p>{props.artist} | {props.album}</p>
+                <h3>{props.track.name}</h3>
+                <p>{props.track.artists[0].name} | {props.track.album}</p>
             </div>
-            <button className={styles["Track-action"]}>{props.isRemoval ? "-" : "+"}</button>
+            <button className={styles["Track-action"]} onClick={moveTrack}>{props.isRemoval ? "-" : "+"}</button>
         </div>
     );
 };
