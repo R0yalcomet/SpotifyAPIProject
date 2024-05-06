@@ -8,6 +8,8 @@ import MockTracks from "./MockTracks";
 
 function App() {
   const [searchData, setSearchData] = useState(MockTracks);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState(MockTracks);
 
   return (
     <div>
@@ -16,7 +18,7 @@ function App() {
         <SearchBar/>
         <div className={styles["App-playlist"]}>
           <SearchResults userSearch={searchData}/>
-          <Playlist/>
+          <Playlist name={playlistName} playlistTracks={playlistTracks}/>
         </div>
       </div>
     </div>
