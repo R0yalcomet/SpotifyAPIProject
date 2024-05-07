@@ -20,6 +20,12 @@ function App() {
     } 
   };
 
+  const removeTrack = (trackToRemove) => {
+    const newPlaylist = playlistTracks.filter(track => track.id != trackToRemove.id);
+
+    setPlaylistTracks(newPlaylist);
+  };
+
   return (
     <div>
       <h1>Ja<span className={styles.highlight}>mmm</span>ing</h1>
@@ -27,7 +33,7 @@ function App() {
         <SearchBar/>
         <div className={styles["App-playlist"]}>
           <SearchResults userSearch={searchData} onAdd={addTrack}/>
-          <Playlist name={playlistName} playlistTracks={playlistTracks}/>
+          <Playlist name={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@ const Playlist = (props) => {
     return (
         <div className={styles.Playlist}>
             <input defaultValue={props.name}/>
-            <Tracklist trackData={props.playlistTracks}/>
+            <Tracklist trackData={props.playlistTracks} isRemoval={true} buttonAction={props.onRemove}/>
             <button className={styles["Playlist-save"]}>
                 SAVE TO SPOTIFY
             </button>
