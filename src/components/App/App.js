@@ -26,6 +26,10 @@ function App() {
     setPlaylistTracks(newPlaylist);
   };
 
+  const changePlaylistName = (newPlaylistName) => {
+    setPlaylistName(newPlaylistName);
+  };
+
   return (
     <div>
       <h1>Ja<span className={styles.highlight}>mmm</span>ing</h1>
@@ -33,7 +37,7 @@ function App() {
         <SearchBar/>
         <div className={styles["App-playlist"]}>
           <SearchResults userSearch={searchData} onAdd={addTrack}/>
-          <Playlist name={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
+          <Playlist name={playlistName} onChangeName={changePlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack}/>
         </div>
       </div>
     </div>
