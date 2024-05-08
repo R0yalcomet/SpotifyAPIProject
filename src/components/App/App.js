@@ -37,11 +37,15 @@ function App() {
     setPlaylistTracks([]);
   };
 
+  const search = (searchTerm) => {
+    console.log(searchTerm);
+  };
+
   return (
     <div>
       <h1>Ja<span className={styles.highlight}>mmm</span>ing</h1>
       <div className={styles.App}>
-        <SearchBar/>
+        <SearchBar onSearch={search}/>
         <div className={styles["App-playlist"]}>
           <SearchResults userSearch={searchData} onAdd={addTrack}/>
           <Playlist name={playlistName} onChangeName={changePlaylistName} playlistTracks={playlistTracks} onRemove={removeTrack} onSave={savePlaylist}/>
