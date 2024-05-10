@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Track.module.css';
+import cover from './placeholderAlbum.jpg';
 
 const Track = (props) => {
     const moveTrack = () => {
@@ -8,6 +9,7 @@ const Track = (props) => {
 
     return (
         <div className={styles.Track}>
+             <img src={props.track.album.images ? props.track.album.images[2].url : cover}/>
             <div className={styles["Track-information"]}>
                 <h3>{props.track.name}</h3>
                 <p>{props.track.artists[0].name} | {props.track.album.name}</p>
