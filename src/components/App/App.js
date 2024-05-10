@@ -5,10 +5,21 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import Spotify from "../../util/Spotify/Spotify";
 
-import MockTracks from "./MockTracks";
+const exampleTrack = [
+  {
+      album: {
+        name: "Album Name"
+      },
+      name: "Track Name",
+      artists: [{
+          name: "Artist Name"
+      }],
+      id: ""
+  }
+];
 
 function App() {
-  const [searchData, setSearchData] = useState(MockTracks);
+  const [searchData, setSearchData] = useState(exampleTrack);
   const [playlistName, setPlaylistName] = useState("New Playlist");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
