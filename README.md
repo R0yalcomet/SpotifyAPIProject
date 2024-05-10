@@ -10,9 +10,9 @@ Before the app can function, the user must authorize it to access their Spotify 
 ## Future Work
 The following are potential features/changes that may or may not be added.
 - [x] include album image in track display
-- [] allow audio preview for selected track
-- [] change authorization flow to authorization code with PKCE (currently implicit grant)
-- [] allow for search filter options
+- [ ] allow audio preview for selected track
+- [ ] change authorization flow to authorization code with PKCE (currently implicit grant)
+- [ ] allow for search filter options
 
 ## Codecademy Project Overview
 In this project, you will build a React web application called Jammming. You will use your knowledge of React components, passing state, and requests with the Spotify API to build a website that allows users to search the Spotify library, create a custom playlist, then save it to their Spotify account.
