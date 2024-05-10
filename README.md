@@ -9,7 +9,7 @@ Before the app can function, the user must authorize it to access their Spotify 
 
 ## Future Work
 The following are potential features/changes that may or may not be added.
-[] include album image in track display
+[x] include album image in track display
 [] allow audio preview for selected track
 [] change authorization flow to authorization code with PKCE (currently implicit grant)
 [] allow for search filter options
