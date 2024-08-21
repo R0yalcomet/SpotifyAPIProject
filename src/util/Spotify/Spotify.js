@@ -1,7 +1,7 @@
 import {useState} from "react"
 
 const clientId = 'e9baae3b683444608e90477318dd2a16';
-const redirectUri = 'http://localhost:3000';
+const redirectUri = window.location.toString();
 
 let accessToken = '';
 let expireToken;
@@ -9,7 +9,7 @@ let expireToken;
 const Spotify = {
     getAccessToken : () => {
         if (accessToken) {
-            return;
+            return accessToken;
         };
 
         const tokenURL = window.location.href.match(/access_token=([^&]*)/);
@@ -21,7 +21,7 @@ const Spotify = {
 
             window.setTimeout(() => accessToken = '', expireToken * 1000);
             window.history.pushState('Access Token', '', '/');
-            return;
+            return accessToken;
         };
 
         const redirect = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}`;
@@ -29,10 +29,10 @@ const Spotify = {
     },
 
     search : (term) => {
-        Spotify.getAccessToken();
+        const token = Spotify.getAccessToken();
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             method: "GET",
-            headers: {Authorization: `Bearer ${accessToken}`}
+            headers: {Authorization: `Bearer ${token}`}
         })
             .then(response => response.json())
             .then(jsonResponse => {
