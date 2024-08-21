@@ -8,7 +8,7 @@ const Tracklist = (props) => {
     return (
         <div className={styles.Tracklist}>
             {props.trackData?.map(track => 
-                <Track track={track} isRemoval={props.isRemoval} buttonAction={props.buttonAction}/>
+                <Track key={track.id} track={track} isRemoval={props.isRemoval} buttonAction={props.buttonAction}/>
             )}
         </div>
     );
