@@ -1,4 +1,4 @@
 .SearchResults {
-    height: 35rem;
+    max-height: 35rem;
     overflow-y: scroll;
 }
