@@ -30,7 +30,10 @@ const Spotify = {
 
     search : (term) => {
         const token = Spotify.getAccessToken();
-        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+        const yearNow = new Date().getFullYear();
+        let query = (term ? term : `year:${yearNow - 1}-${yearNow}`);
+
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${query}`, {
             method: "GET",
             headers: {Authorization: `Bearer ${token}`}
         })
