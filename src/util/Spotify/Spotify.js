@@ -20,7 +20,7 @@ const Spotify = {
             expireToken = Number(expireURL[1]);
 
             window.setTimeout(() => accessToken = '', expireToken * 1000);
-            window.history.pushState('Access Token', '', '/');
+            window.history.pushState('Access Token', '', '/SpotifyAPIProject/');
             return accessToken;
         };
 
