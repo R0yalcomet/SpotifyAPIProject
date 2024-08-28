@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/SpotifyAPIProject/static/css/main.a2f3da0d.css",
+    "main.css": "/SpotifyAPIProject/static/css/main.15e87f4e.css",
     "main.js": "/SpotifyAPIProject/static/js/main.b9b014e8.js",
     "static/media/background_photo_desktop.jpg": "/SpotifyAPIProject/static/media/background_photo_desktop.a0687f3fe6f1303a2d18.a0687f3fe6f1303a2d18.jpg",
     "index.html": "/SpotifyAPIProject/index.html",
-    "main.a2f3da0d.css.map": "/SpotifyAPIProject/static/css/main.a2f3da0d.css.map",
+    "main.15e87f4e.css.map": "/SpotifyAPIProject/static/css/main.15e87f4e.css.map",
     "main.b9b014e8.js.map": "/SpotifyAPIProject/static/js/main.b9b014e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2f3da0d.css",
+    "static/css/main.15e87f4e.css",
     "static/js/main.b9b014e8.js"
   ]
 }
